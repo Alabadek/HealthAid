@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Customer Page";
+} 
+
+
+@model List<Patient>
+
+<div class="text-end mb-2">
+    <a class="btn btn-outline-primary" asp-controller="Patient" asp-action="Add">
+        Add Patient
+    </a>
+</div>
+
+<table class="table table-bordered table-striped">
+
+    @foreach (Patient patient in Model)
+    {
+
+        <tr>
+            <td>@patient.FirstName @patient.LastName</td>
+            <td>@patient.DateOfBirth</td>
+            <td>@patient.Gender</td>
+            <td>@patient.Contact</td>
+            <td>@patient.EmergencyContact</td>
+            <td>@patient.MaritalStatus</td>
+
+            <td>  
+               <a class="btn btn-info text-white btn-sm" asp-controller="Patient" asp-action="Detail" asp-route-id="@patient.Id"></a>
+               <span  ></span>
+                <a class="btn btn-info text-white btn-sm" asp-controller="Patient" asp-action="Edit" asp-route-id="@patient.Id"></a>
+                <span></span>
+            </td>
+
+        </tr>
+
+    }
+</table>

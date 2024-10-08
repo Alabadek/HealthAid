@@ -1,0 +1,62 @@
+﻿ @model Patient
+
+
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="alert alert-primary">
+            Edit Patient
+        </div>
+    </div>
+    <div class="col-6 offset-3">
+        <form method="post" asp-controller="Patient" asp-action="Edit">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">First Name</label>
+                    <input class="form-control" asp-for="FirstName" />
+                    <span class="text-danger" asp-validation-for="FirstName"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input class="form-control" asp-for="LastName" />
+                    <span class="text-danger" asp-validation-for="LastName"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">DoB</label>
+                    <input class="form-control" asp-for="DateOfBirth" />
+                    <span class="text-danger" asp-validation-for="DateOfBirth"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Gender</label>
+                    <input class="form-control" asp-for="Gender" />
+                    <span class="text-danger" asp-validation-for="Gender"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Contact</label>
+                    <input class="form-control" asp-for="Contact" />
+                    <span class="text-danger" asp-validation-for="Contact"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Emergency Contact</label>
+                    <input class="form-control" asp-for="EmergencyContact" />
+                    <span class="text-danger" asp-validation-for="EmergencyContact"></span>
+
+                    <div class="col-md-6 mb-6">
+                        <label class="form-label">Marital Status</label>
+                        <input class="form-control" asp-for="MaritalStatus" />
+                        <span class="text-danger" asp-validation-for="MaritalStatus"></span>
+                    </div>
+                </div>
+                <div class="col-md-12 my-2">
+                    <button class="btn btn-outline-primary d-block w-100">Submit</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
