@@ -10,7 +10,7 @@ namespace Health.Services
         public string ConnectionString {  get; set; }
         public PatientService()
         {
-            ConnectionString = "Server=JOCHEBED\\SQLEXPRESS;Database=MyHealthDb;Trusted_Connection=True;TrustServerCertificate=True;";
+            ConnectionString = "Server=DESKTOP-EOLJDSP\\SQLEXPRESS;Database=MyHealthDb;Trusted_Connection=True;TrustServerCertificate=True;";
         }
 
         public List<Patient> GetPatients()
@@ -34,7 +34,8 @@ namespace Health.Services
                             patient.Id = reader.GetInt32(0);
                             patient.FirstName = reader.GetString(1);
                             patient.LastName = reader.GetString(2);
-                            patient.DateOfBirth = reader.GetString(3);
+                            patient.DateOfBirth = DateOnly.FromDateTime(reader.GetDateTime(3));
+                            patient.Gender = reader.GetString(4);
                             patient.Gender = reader.GetString(4);
                             patient.Contact = reader.GetString(5);
                             patient.EmergencyContact = reader.GetString(6);
@@ -67,7 +68,7 @@ namespace Health.Services
                             patient.Id = reader.GetInt32(0);
                             patient.FirstName= reader.GetString(1);
                             patient.LastName= reader.GetString(2);
-                            patient.DateOfBirth= reader.GetString(3);
+                            patient.DateOfBirth = DateOnly.FromDateTime(reader.GetDateTime(3));
                             patient.Gender= reader.GetString(4);
                             patient.Contact = reader.GetString(5);
                             patient.EmergencyContact  = reader.GetString(6);
