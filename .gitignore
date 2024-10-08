@@ -1,1 +1,93 @@
-*.vs
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files.
+
+# User-specific files
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files from packages
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Auto-generated files for NuGet Restore
+# .NET Core
+project.assets.json
+project.nuget.cache
+project.fragment.lock.json
+project.lock.json
+
+# Build results
+bin/
+obj/
+
+# If using the dotnet CLI
+dotnet-cli-tools.json
+
+# VS Code directories
+.vscode/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file for window manager
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Web server generated files
+*.log
+*.tlog
+*.out
+*.pid
+*.cache
+*.csproj.user
+*.sln.docstates
+
+# Debugging and runtime files
+*.log
+*.dmp
+*.pdb
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Local history
+.history/
+
+# Rider IDE files
+.idea/
+.idea_modules/
+.idea_*
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/markdown-navigator.xml
+.idea/markdown-navigator/
+
+# OS-generated files
+.DS_Store
+*.bak
+*.swp
+
+# Resharper/StyleCop
+_Resharper*/
+StyleCop.Cache
+
+# JetBrains Rider
+.idea/

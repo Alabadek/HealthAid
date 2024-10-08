@@ -1692,11 +1692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\source\\repos\\Health\\Health\\Health.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Source\\Repos\\Health-Hub\\Health\\Health.csproj",
       "projectName": "Health",
-      "projectPath": "C:\\Users\\USER\\source\\repos\\Health\\Health\\Health.csproj",
+      "projectPath": "C:\\Users\\USER\\Source\\Repos\\Health-Hub\\Health\\Health.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\source\\repos\\Health\\Health\\obj\\",
+      "outputPath": "C:\\Users\\USER\\Source\\Repos\\Health-Hub\\Health\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
