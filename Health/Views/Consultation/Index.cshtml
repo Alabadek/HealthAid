@@ -1,4 +1,4 @@
-﻿@model List<Patient>
+﻿@model List<Consultation>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,27 +18,26 @@
             color: white;
         }
 
-        .btn-outline{
-           border:2px solid teal;
+        .btn-outline {
+            border: 2px solid teal;
         }
 
-        h1{
+        h1 {
             color: teal;
-            font-weight:600;
-            text-align:center;
- 
+            font-weight: 600;
+            text-align: center;
         }
-       
-        .btn-outline:hover{
-                background-color: teal;
-                color:white;
+
+        .btn-outline:hover {
+            background-color: teal;
+            color: white;
         }
+
         .btn-edit {
             color: #007BFF;
             border: none;
             background: none;
             cursor: pointer;
-
             .btn-
         }
 
@@ -51,51 +50,44 @@
     </style>
 </head>
 <body>
-    <h1>Patient List</h1>
+    <h1>Consultation List</h1>
     <div class="container mt-5">
         <div class="text-end mb-2">
             <div class="text-end mb-2">
-                <a class="btn btn-outline" asp-controller="Patient" asp-action="Add">
-                    Add Patient
+                <a class="btn btn-outline" asp-controller="Consultation" asp-action="Add">
+                    Add Consultation
                 </a>
             </div>
         </div>
         <table class="table table-striped">
             <thead class="table-header">
                 <tr>
+                    <th>Consultation Id</th>
                     <th>Patient Id</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Date of Birth</th>
-                    <th>Gender</th>
-                    <th>Contact</th>
-                    <th>Emergency Contact</th>
-                    <th>Marital Status</th>
+                    <th>Diagnosis</th>
+                    <th>Consultation Date</th>
+                    <th>Remarks</th>
+                    <th>Staff Id</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (Patient patient in Model)
+                @foreach (Consultation consultation in Model)
                 {
-                   
-                    
-                        <tr>
-                            <td>@patient.Id</td>
-                            <td>@patient.FirstName</td>
-                            <td>@patient.LastName</td>
-                            <td>@patient.DateOfBirth</td>
-                            <td>@patient.Gender</td>
-                            <td>@patient.Contact</td>
-                            <td>@patient.EmergencyContact</td>
-                            <td>@patient.MaritalStatus</td>
-                            <td>
-                          
-                                <a class="btn btn-edit" asp-controller="Patient" asp-action="Edit" asp-route-id="@patient.Id">
-                                    <i class="bi bi-pencil"></i>
-                                </a>
-                            </td>
-                        </tr>
-                     
+                    <tr>
+                        <td>@consultation.Id</td>
+                        <td>@consultation.PatientId</td>
+                        <td>@consultation.Diagnosis</td>
+                        <td>@consultation.Date</td>
+                        <td>@consultation.Remarks</td>
+                        <td>@consultation.StaffId</td>
+                      
+                        <td>
+                            <a class="btn btn-edit" asp-controller="Consultation" asp-action="Edit" asp-route-id="@consultation.Id">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                        </td>
+                    </tr>
                 }
 
 

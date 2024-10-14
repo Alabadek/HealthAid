@@ -34,7 +34,7 @@ namespace Health.Services
                             patient.Id = reader.GetInt32(0);
                             patient.FirstName = reader.GetString(1);
                             patient.LastName = reader.GetString(2);
-                            patient.DateOfBirth = reader.GetString(3);
+                            patient.DateOfBirth = DateOnly.FromDateTime(reader.GetDateTime(3));
                             patient.Gender = reader.GetString(4);
                             patient.Contact = reader.GetString(5);
                             patient.EmergencyContact = reader.GetString(6);
@@ -67,7 +67,7 @@ namespace Health.Services
                             patient.Id = reader.GetInt32(0);
                             patient.FirstName= reader.GetString(1);
                             patient.LastName= reader.GetString(2);
-                            patient.DateOfBirth= reader.GetString(3);
+                            patient.DateOfBirth = DateOnly.FromDateTime(reader.GetDateTime(3));
                             patient.Gender= reader.GetString(4);
                             patient.Contact = reader.GetString(5);
                             patient.EmergencyContact  = reader.GetString(6);
@@ -109,7 +109,7 @@ namespace Health.Services
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
-                string query = "Update Patient set FirstName=@Fn, LastName=@Ln,DateofBirth=@DoB,Gender=@Gen,Contact=@Contact,EmergencyContact=@EmerCon,MaritalStatus=@MaritalStatus";
+                string query = "Update Patient set FirstName=@Fn, LastName=@Ln,DateofBirth=@DoB,Gender=@Gen,Contact=@Contact,EmergencyContact=@EmerCon,MaritalStatus=@MaritalStatus  WHERE PatientId = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {

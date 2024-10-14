@@ -11,11 +11,23 @@ namespace Health.Controllers
         {
             service = patientService;
         }
-        public IActionResult Index()
+        public IActionResult Index(string? id)
         {
-            PatientService patientService = new PatientService();
-            List<Patient> patients = patientService.GetPatients();
-            return View(patients);
+            
+              List<Patient> patients = service.GetPatients();
+
+            if (string.IsNullOrEmpty(id))
+            {
+                return View(patients);
+            }
+            else
+            {
+                var patient = patients.Where(x => x.Id == Convert.ToInt32(id)).ToList();
+                return View(patient);
+            }
+                
+              
+                      
         }
 
 
@@ -40,6 +52,7 @@ namespace Health.Controllers
 
         public IActionResult Edit(int id)
         {
+            
             Patient patient = service.GetPatient(id);
             return View(patient);
         }
@@ -47,8 +60,12 @@ namespace Health.Controllers
         [HttpPost]
         public IActionResult Edit(Patient patient)
         {
-            service.EditPatient(patient);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                service.EditPatient(patient);
+                return RedirectToAction("Index");
+            }
+            return View(patient);
         }
     }
  

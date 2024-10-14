@@ -5,6 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<PatientService>();
+builder.Services.AddSingleton<StaffService>();
+builder.Services.AddSingleton<ConsultationService>();
+builder.Services.AddSingleton<PrescriptionService>();
+builder.Services.AddSingleton<AppointmentService>();
+builder.Services.AddSingleton<UserService>();
+builder.Services.AddSingleton<SinglePatientService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -19,7 +26,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
